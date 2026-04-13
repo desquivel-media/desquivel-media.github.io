@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel Esquivel | Revenue Growth Through Paid Media</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===================== RESET & BASE ===================== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #A4BDF8;
+      --accent-dark: #7A9BE6;
+      --bg-dark: #0B0F1A;
+      --bg-section: #F7F8FC;
+      --text-primary: #0B0F1A;
+      --text-secondary: #4A5068;
+      --text-light: #8891A5;
+      --white: #FFFFFF;
+      --card-bg: #FFFFFF;
+      --border: #E2E6F0;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Playfair Display', Georgia, serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      background: var(--white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===================== NAV ===================== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(11, 15, 26, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(164, 189, 248, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: #B0B8CC;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .nav-hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(to bottom, rgba(11,15,26,0.92) 0%, rgba(11,15,26,0.88) 50%, rgba(11,15,26,0.95) 100%),
+        url('sandiego.jpg') center / cover no-repeat;
+      position: relative;
+      overflow: hidden;
+      padding: 140px 2rem 100px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(164, 189, 248, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -5%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(164, 189, 248, 0.05) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 0.8fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .hero-image img,
+    .hero-image svg {
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .hero-image img {
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow:
+        0 24px 64px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(164, 189, 248, 0.06),
+        0 0 100px rgba(164, 189, 248, 0.04);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(164, 189, 248, 0.2);
+      border-radius: 100px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: #8891A5;
+      max-width: 540px;
+      line-height: 1.75;
+      margin-bottom: 0.75rem;
+      font-weight: 400;
+    }
+
+    .hero-proof {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      margin-bottom: 2rem;
+      opacity: 0.8;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg-dark);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(164, 189, 248, 0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ===================== SECTIONS ===================== */
+    section {
+      padding: 100px 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .section-intro {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+      line-height: 1.75;
+    }
+
+    /* ===================== ABOUT ===================== */
+    .about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .about-image img,
+    .about-image svg {
+      width: 100%;
+    }
+
+    .about-image img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .stat-card {
+      background: var(--bg-section);
+      border-radius: 14px;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-number span {
+      color: var(--accent-dark);
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===================== RESULTS ===================== */
+    /* ===================== AGENCY ADVANTAGE ===================== */
+    .advantage {
+      background: var(--bg-section);
+    }
+
+    .advantage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .advantage-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem 1.75rem;
+      transition: all 0.25s;
+    }
+
+    .advantage-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .advantage-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .advantage-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===================== FAQ ===================== */
+    .faq {
+      background: var(--bg-section);
+    }
+
+    .faq-list {
+      max-width: 800px;
+      margin-top: 3rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.75rem 0;
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-question {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 0;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-family: var(--font-body);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--accent-dark);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-question::after {
+      content: '−';
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 500px;
+      padding-top: 1rem;
+    }
+
+    .faq-answer p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    .results {
+      background: var(--bg-dark);
+      color: var(--white);
+    }
+
+    .results .section-tag {
+      color: var(--accent);
+    }
+
+    .results .section-title {
+      color: var(--white);
+    }
+
+    .results .section-intro {
+      color: #8891A5;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .result-card.result-card--wide {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .result-card--wide .result-desc {
+      margin-bottom: 0;
+    }
+
+    .result-card--wide .result-metric {
+      margin-bottom: 0;
+      white-space: nowrap;
+    }
+
+    .result-card--wide .result-context {
+      margin-top: 0;
+    }
+
+    .result-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .result-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--accent);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .result-card:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(164, 189, 248, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .result-card:hover::before {
+      opacity: 1;
+    }
+
+    .result-metric {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      line-height: 1.1;
+    }
+
+    .result-desc {
+      font-size: 0.95rem;
+      color: #B0B8CC;
+      line-height: 1.7;
+    }
+
+    .result-context {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.25rem 0.75rem;
+      background: rgba(164, 189, 248, 0.08);
+      border-radius: 100px;
+    }
+
+    /* ===================== CASE STUDY ===================== */
+    .case-study {
+      background: var(--bg-section);
+    }
+
+    .case-grid {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.3fr;
+      gap: 2rem;
+    }
+
+    .case-phase {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+
+    .case-phase-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-dark);
+      margin-bottom: 1rem;
+    }
+
+    .case-phase p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    .case-results-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .case-stat {
+      text-align: center;
+      padding: 1rem 0.5rem;
+      background: var(--bg-section);
+      border-radius: 10px;
+    }
+
+    .case-stat-number {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .case-stat-label {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.2rem;
+    }
+
+    .case-kicker {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    /* ===================== PRINCIPLES ===================== */
+    .principles {
+      background: var(--white);
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .principle-card {
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--bg-section);
+      transition: all 0.25s;
+    }
+
+    .principle-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      border-color: var(--accent);
+    }
+
+    .principle-number {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      opacity: 0.5;
+      margin-bottom: 0.75rem;
+      line-height: 1;
+    }
+
+    .principle-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.6rem;
+    }
+
+    .principle-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* ===================== EXPERIENCE ===================== */
+    .experience {
+      background: var(--white);
+    }
+
+    .timeline {
+      margin-top: 3rem;
+      position: relative;
+      padding-left: 2.5rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--border));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.5rem;
+      top: 0.35rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--white);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+
+    .timeline-item:not(:first-child)::before {
+      background: var(--border);
+      box-shadow: 0 0 0 2px var(--border);
+    }
+
+    .timeline-role {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.15rem;
+    }
+
+    .timeline-company {
+      font-size: 0.95rem;
+      color: var(--accent-dark);
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .timeline-date {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    .timeline-impact {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--accent-dark);
+      margin-top: 0.4rem;
+      max-width: 600px;
+    }
+
+    /* ===================== AI SECTION ===================== */
+    .ai-section {
+      background: var(--bg-section);
+    }
+
+    .ai-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .ai-text {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+    }
+
+    .ai-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .ai-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      transition: all 0.25s;
+    }
+
+    .ai-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .ai-card-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .ai-card-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--bg-dark);
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .ai-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .ai-card p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ===================== TECH STACK ===================== */
+    .tech-stack {
+      background: var(--white);
+    }
+
+    .tech-intro {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .tech-categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .tech-category {
+      background: var(--bg-section);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: all 0.25s;
+    }
+
+    .tech-category:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+
+    .tech-category-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-dark);
+      margin-bottom: 1rem;
+    }
+
+    .tech-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .tech-list li {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      padding: 0.3rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+      transition: color 0.2s;
+    }
+
+    .tech-list li:last-child {
+      border-bottom: none;
+    }
+
+    .tech-category:hover .tech-list li {
+      color: var(--text-primary);
+    }
+
+    /* ===================== CLIENTS ===================== */
+    .clients {
+      background: var(--bg-dark);
+    }
+
+    .clients .section-tag { color: var(--accent); }
+    .clients .section-title { color: var(--white); }
+
+    .clients-intro {
+      font-size: 1.05rem;
+      color: #8891A5;
+      max-width: 640px;
+      line-height: 1.75;
+      margin-bottom: 3rem;
+    }
+
+    .clients-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .client-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #B0B8CC;
+      transition: all 0.25s;
+      letter-spacing: 0.01em;
+      flex: 0 1 180px;
+    }
+
+    .client-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(164, 189, 248, 0.2);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .clients-note {
+      margin-top: 2.5rem;
+      font-size: 0.9rem;
+      color: #8891A5;
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* ===================== CONTACT ===================== */
+    .contact {
+      position: relative;
+      text-align: center;
+      background:
+        linear-gradient(to bottom, rgba(11,15,26,0.88) 0%, rgba(11,15,26,0.94) 60%, rgba(11,15,26,0.98) 100%),
+        url('sandiego.jpg') center / cover no-repeat;
+      overflow: hidden;
+    }
+
+    .contact > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact .section-tag { color: var(--accent); }
+    .contact .section-title { color: var(--white); }
+
+    .contact-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 2.5rem;
+      opacity: 0.75;
+    }
+
+    .contact-location::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.5;
+    }
+
+    .contact-location::after {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.5;
+    }
+
+    .contact-intro {
+      font-size: 1.05rem;
+      color: #8891A5;
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.75;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: all 0.25s;
+    }
+
+    .contact-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      background: var(--bg-dark);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* ===================== ANIMATIONS ===================== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-image {
+        order: -1;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero-image img,
+      .hero-image svg {
+        max-width: 140px;
+      }
+
+      .hero-image img {
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+      }
+
+      .hero-image svg {
+        border-radius: 50% !important;
+        aspect-ratio: 1 / 1 !important;
+      }
+
+      .about-image {
+        display: none;
+      }
+
+      .hero-ctas {
+        justify-content: center;
+      }
+
+      .hero-proof {
+        text-align: center;
+      }
+
+      .about-grid,
+      .ai-grid,
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tech-categories {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .principles-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .advantage-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .result-card.result-card--wide {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .result-card--wide .result-metric {
+        white-space: normal;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0; right: 0;
+        background: rgba(11, 15, 26, 0.98);
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        gap: 1rem;
+        border-bottom: 1px solid rgba(164, 189, 248, 0.1);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .hero { padding: 100px 1.5rem 60px; }
+      section { padding: 70px 1.5rem; }
+
+      .client-card {
+        flex: 0 1 140px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .about-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .ai-cards,
+      .principles-grid,
+      .tech-categories,
+      .advantage-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+      }
+
+      .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAV ==================== -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Daniel <span>Esquivel</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#advantage">Why Agency</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#ai">AI</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-tag">Head of Growth &middot; Paid Media</div>
+        <h1>Paid Media Isn't the Strategy.<br><em>Revenue Is.</em></h1>
+        <p class="hero-sub">Senior growth leader managing $50M+ in annual media investment across search, social, and programmatic. I build the systems, teams, and strategies that make acquisition scalable and predictable.</p>
+        <p class="hero-proof">$50M+ managed &nbsp;&bull;&nbsp; 15-Year Google Premier Partner &nbsp;&bull;&nbsp; Microsoft Channel Partner</p>
+        <div class="hero-ctas">
+          <a href="#results" class="btn btn-primary">View Results ↓</a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="headshot.jpg" alt="Daniel Esquivel">
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-tag">About</div>
+      <h2 class="section-title fade-up">I Build Growth Systems,<br>Not Just Campaigns</h2>
+      <div class="about-grid">
+        <div class="about-text fade-up">
+          <p>I've spent 15 years building paid media programs from the ground up, then scaling them into core revenue drivers. I don't just manage campaigns. I design the systems behind them: forecasting models, QA frameworks, team structures, and automation that turn spend into compounding growth.</p>
+          <p>Today, I lead a $50M+ media portfolio and a 40-person global team with full P&amp;L ownership, accountable for revenue contribution, gross margin, and profitability. I'm deeply focused on how AI and modern tooling are reshaping what's possible in performance marketing.</p>
+        </div>
+        <div class="about-right fade-up">
+          <!-- Replace this entire <svg> block with: <img src="your-secondary-photo.jpg" alt="Daniel Esquivel at work"> -->
+          <div class="about-image">
+            <img src="about-photo.jpg" alt="Daniel Esquivel">
+          </div>
+          <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-number">$50M<span>+</span></div>
+            <div class="stat-label">Annual Media Managed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">15<span>+</span></div>
+            <div class="stat-label">Years in Growth</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">40<span>+</span></div>
+            <div class="stat-label">Global Team Members</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">3<span>×</span></div>
+            <div class="stat-label">Revenue Scaled</div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== AGENCY ADVANTAGE ==================== -->
+  <section class="advantage" id="advantage">
+    <div class="container">
+      <div class="section-tag">The Operator Advantage</div>
+      <h2 class="section-title fade-up">What 15 Years Across<br>1,000+ Brands Teaches You</h2>
+      <p class="section-intro fade-up">Agency operators don't have the luxury of learning one business. They have to diagnose fast, build systems that scale across industries, and prove ROI every single month to keep the relationship. That pressure creates a skillset most in-house leaders never develop.</p>
+
+      <div class="advantage-grid">
+        <div class="advantage-card fade-up">
+          <h3>Pattern Recognition at Scale</h3>
+          <p>When you've managed paid media across ecommerce, SaaS, financial services, hospitality, and home services, you stop guessing. You see what works because you've tested it across hundreds of businesses, not just one.</p>
+        </div>
+
+        <div class="advantage-card fade-up">
+          <h3>Built to Prove ROI</h3>
+          <p>In-house teams report to stakeholders. Agency leaders report to clients who can walk away. Every dollar I've managed had to show a return, or the account was at risk. That accountability shapes how I think about spend.</p>
+        </div>
+
+        <div class="advantage-card fade-up">
+          <h3>Speed of Execution</h3>
+          <p>Managing 50+ accounts at once means you learn to prioritize, systematize, and move fast. I've built playbooks, QA processes, and onboarding systems that let teams scale without sacrificing quality.</p>
+        </div>
+
+        <div class="advantage-card fade-up">
+          <h3>Cross-Channel Fluency</h3>
+          <p>Most in-house marketers go deep on one or two channels. I've operated across Google, Meta, LinkedIn, programmatic, CTV, and more simultaneously, backed by 15 years as a Google Premier Partner and experience as a Microsoft Channel Partner. That cross-channel perspective, combined with platform-level best practices, changes how you allocate budget and read performance.</p>
+        </div>
+
+        <div class="advantage-card fade-up">
+          <h3>P&amp;L Discipline from Day One</h3>
+          <p>Agency economics force you to think about margin, utilization, and profitability constantly. I've managed team P&amp;Ls, improved gross margin, and made resourcing decisions that directly impacted the bottom line.</p>
+        </div>
+
+        <div class="advantage-card fade-up">
+          <h3>Systems Over Heroics</h3>
+          <p>You can't scale an agency on individual effort. I've built the forecasting models, reporting frameworks, and operational processes that let teams deliver consistent results without burning out.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RESULTS ==================== -->
+  <section class="results" id="results">
+    <div class="container">
+      <div class="section-tag">Proven Impact</div>
+      <h2 class="section-title fade-up">Results That Moved<br>the Business</h2>
+      <p class="section-intro fade-up">Real outcomes from real engagements. Every number here is backed by campaigns I built, teams I led, and systems I designed.</p>
+
+      <div class="results-grid">
+        <div class="result-card fade-up">
+          <div class="result-metric">Scaled to $50M+ in Spend</div>
+          <div class="result-desc">Built a paid media function from zero to $50M+ in annual spend, now driving ~30% of total company revenue with 3× growth in two years.</div>
+          <div class="result-context">Org Growth</div>
+        </div>
+
+        <div class="result-card fade-up">
+          <div class="result-metric">$3.6M Incremental Revenue</div>
+          <div class="result-desc">Drove $3.6M in incremental revenue while increasing ROAS by 34%, followed by 89% YoY growth on just a 5.2% budget increase.</div>
+          <div class="result-context">Ecommerce</div>
+        </div>
+
+        <div class="result-card fade-up">
+          <div class="result-metric">$2.8M Trackable Revenue</div>
+          <div class="result-desc">Produced $2.8M in trackable revenue for a home services brand while reducing CPA by 63%, sustained over a multi-year engagement.</div>
+          <div class="result-context">Home Services</div>
+        </div>
+
+        <div class="result-card fade-up">
+          <div class="result-metric">418% Revenue Growth</div>
+          <div class="result-desc">Grew paid revenue by 418% and conversions by 574% for a DTC brand in a saturated market through full-funnel restructuring.</div>
+          <div class="result-context">DTC / Paid Search</div>
+        </div>
+
+        <div class="result-card fade-up">
+          <div class="result-metric">174% More Leads, 59% Lower CPL</div>
+          <div class="result-desc">Increased paid search leads by 174% while lowering cost per lead by 59% for a high-SKU ecommerce brand.</div>
+          <div class="result-context">Lead Generation</div>
+        </div>
+
+        <div class="result-card fade-up">
+          <div class="result-metric">~50% → ~63% Gross Margin</div>
+          <div class="result-desc">Improved gross margin through operational efficiency, automation, and resource planning, directly impacting profitability.</div>
+          <div class="result-context">Operational Efficiency</div>
+        </div>
+
+        <div class="result-card result-card--wide fade-up">
+          <div class="result-metric">40-Person Global Team</div>
+          <div class="result-desc">Built and scaled a global team across U.S. and Philippines, including Director-level leadership, with full ownership of hiring, org design, and capacity planning.</div>
+          <div class="result-context">Leadership</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CASE STUDY ==================== -->
+  <section class="case-study" id="case-study">
+    <div class="container">
+      <div class="section-tag">Featured Case Study</div>
+      <h2 class="section-title fade-up">From Stalled Budget<br>to $3.6M in Growth</h2>
+
+      <div class="case-grid fade-up">
+        <div class="case-phase">
+          <div class="case-phase-label">The Problem</div>
+          <p>An ecommerce retailer was hitting a ceiling. They had healthy ROAS and were willing to spend more, but couldn't scale without efficiency collapsing. Their campaign structure couldn't support the next level of growth.</p>
+        </div>
+        <div class="case-phase">
+          <div class="case-phase-label">What I Changed</div>
+          <p>I led a full account restructure across campaigns, ad groups, creative, attribution, and customer behavior analysis. We rebuilt the architecture around how people actually buy, not how the platform defaults work.</p>
+        </div>
+        <div class="case-phase">
+          <div class="case-phase-label">The Outcome</div>
+          <div class="case-results-row">
+            <div class="case-stat">
+              <div class="case-stat-number">$3.6M</div>
+              <div class="case-stat-label">Incremental Revenue</div>
+            </div>
+            <div class="case-stat">
+              <div class="case-stat-number">+34%</div>
+              <div class="case-stat-label">ROAS Increase</div>
+            </div>
+            <div class="case-stat">
+              <div class="case-stat-number">89%</div>
+              <div class="case-stat-label">YoY Growth (Q1)</div>
+            </div>
+            <div class="case-stat">
+              <div class="case-stat-number">5.2%</div>
+              <div class="case-stat-label">Budget Increase</div>
+            </div>
+          </div>
+          <p class="case-kicker">89% year-over-year revenue growth on just a 5.2% budget increase. That's what structural change looks like.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== HOW I THINK ==================== -->
+  <section class="principles" id="principles">
+    <div class="container">
+      <div class="section-tag">Philosophy</div>
+      <h2 class="section-title fade-up">How I Approach Growth</h2>
+      <p class="section-intro fade-up">Most paid media problems aren't platform issues. They're structural. These are the principles that guide how I build.</p>
+
+      <div class="principles-grid fade-up">
+        <div class="principle-card">
+          <div class="principle-number">01</div>
+          <h4>Systems Over Tactics</h4>
+          <p>Tactics decay. Systems compound. I build the infrastructure that makes performance repeatable, not dependent on one person or one platform trick.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-number">02</div>
+          <h4>Forecast Before You Scale</h4>
+          <p>Scaling without a model is just spending more money. I tie every dollar to a forecast so growth is predictable, not hopeful.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-number">03</div>
+          <h4>Structure Drives Performance</h4>
+          <p>Bad results usually trace back to bad architecture: campaign structure, team structure, or measurement structure. Fix the structure, fix the outcome.</p>
+        </div>
+        <div class="principle-card">
+          <div class="principle-number">04</div>
+          <h4>Measure What Matters</h4>
+          <p>Vanity metrics create false confidence. I focus on revenue contribution, margin impact, and the metrics that Finance and leadership actually care about.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE ==================== -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="section-tag">Career</div>
+      <h2 class="section-title fade-up">15 Years of Building<br>& Scaling</h2>
+      <p class="section-intro fade-up">Same operating model, built three times at increasing scale through two acquisitions and one PE-backed consolidation.</p>
+
+      <div class="timeline fade-up">
+        <div class="timeline-item">
+          <div class="timeline-role">President of Paid Media</div>
+          <div class="timeline-company">Intero Digital</div>
+          <div class="timeline-date">2020 – Present</div>
+          <div class="timeline-desc">Own performance marketing P&L representing ~30% of company revenue. Partner with Finance and executive leadership on investment prioritization and profitability in a PE-backed environment.</div>
+          <div class="timeline-impact">Scaled to $50M+ in managed spend. Built a 40-person global team. Improved margin from ~50% to ~63%.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-role">VP of Paid Media</div>
+          <div class="timeline-company">Titan Growth</div>
+          <div class="timeline-date">2018 – 2020</div>
+          <div class="timeline-desc">Owned divisional P&L, gross margin performance, and delivery quality. Led post-acquisition integration of teams and tech stacks across paid search, social, and programmatic.</div>
+          <div class="timeline-impact">Managed $35M+ media portfolio. Maintained 100% account retention through acquisition.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-role">VP of Paid Media</div>
+          <div class="timeline-company">Radd Interactive</div>
+          <div class="timeline-date">2016 – 2018</div>
+          <div class="timeline-desc">Led acquisition due diligence and operational integration. Built the operating model later adopted across all three organizations.</div>
+          <div class="timeline-impact">Scaled paid media into the company's primary revenue driver.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-role">Director → Senior Strategist</div>
+          <div class="timeline-company">Radd Interactive</div>
+          <div class="timeline-date">2010 – 2016</div>
+          <div class="timeline-desc">Created the foundational SOPs, QA frameworks, and team structure that became the blueprint for everything that followed.</div>
+          <div class="timeline-impact">Built the agency's first paid media department from zero.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== AI SECTION ==================== -->
+  <section class="ai-section" id="ai">
+    <div class="container">
+      <div class="section-tag">Forward Thinking</div>
+      <h2 class="section-title fade-up">How I Use AI<br>in Paid Media</h2>
+
+      <div class="ai-grid">
+        <div class="ai-text fade-up">
+          <p>AI isn't a buzzword in my workflow. It's an operating layer. I integrate AI tooling across campaign planning, creative strategy, performance analysis, and team operations to move faster, find signals earlier, and make better decisions at scale.</p>
+          <p style="margin-top:1rem;">Most teams use AI to move faster. I use it to build systems that don't break at scale.</p>
+          <p style="margin-top:1rem;">The result is a compounding advantage: tighter feedback loops, faster experimentation cycles, and teams that spend less time on mechanics and more time on strategy.</p>
+        </div>
+
+        <div class="ai-cards fade-up">
+          <div class="ai-card">
+            <div class="ai-card-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <h4>Campaign Planning</h4>
+            <p>AI-assisted forecasting and scenario modeling for budget allocation and growth planning.</p>
+          </div>
+          <div class="ai-card">
+            <div class="ai-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+            <h4>Creative Strategy</h4>
+            <p>Rapid creative iteration and testing frameworks powered by generative AI tooling.</p>
+          </div>
+          <div class="ai-card">
+            <div class="ai-card-icon"><svg viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
+            <h4>Performance Analysis</h4>
+            <p>Pattern recognition and anomaly detection across large-scale, multi-channel datasets.</p>
+          </div>
+          <div class="ai-card">
+            <div class="ai-card-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg></div>
+            <h4>QA & Automation</h4>
+            <p>Automated quality assurance, reporting governance, and operational workflows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TECH STACK ==================== -->
+  <section class="tech-stack" id="tools">
+    <div class="container">
+      <div class="section-tag">Tech Stack</div>
+      <h2 class="section-title fade-up">The Tools I Operate With</h2>
+      <p class="tech-intro fade-up">I don't just use these tools. I build workflows and systems around them. From ad platforms to AI models to enterprise analytics, this is the stack I use to plan, execute, measure, and scale.</p>
+
+      <div class="tech-categories fade-up">
+        <div class="tech-category">
+          <div class="tech-category-label">Ad Platforms</div>
+          <ul class="tech-list">
+            <li>Google Ads</li>
+            <li>Meta Ads</li>
+            <li>Microsoft Ads</li>
+            <li>LinkedIn Ads</li>
+            <li>The Trade Desk</li>
+            <li>StackAdapt</li>
+            <li>DV360</li>
+          </ul>
+        </div>
+
+        <div class="tech-category">
+          <div class="tech-category-label">AI & Generative Tools</div>
+          <ul class="tech-list">
+            <li>Claude</li>
+            <li>ChatGPT</li>
+            <li>Gemini</li>
+            <li>Midjourney</li>
+            <li>Runway</li>
+            <li>Perplexity</li>
+          </ul>
+        </div>
+
+        <div class="tech-category">
+          <div class="tech-category-label">Analytics & Measurement</div>
+          <ul class="tech-list">
+            <li>GA4</li>
+            <li>Google Tag Manager</li>
+            <li>Google Search Console</li>
+            <li>Looker Studio</li>
+            <li>Tableau</li>
+            <li>SEMrush</li>
+          </ul>
+        </div>
+
+        <div class="tech-category">
+          <div class="tech-category-label">CRM, Ops & Workflow</div>
+          <ul class="tech-list">
+            <li>HubSpot</li>
+            <li>Salesforce</li>
+            <li>Oracle</li>
+            <li>Klaviyo</li>
+            <li>Mailchimp</li>
+            <li>Notion</li>
+            <li>Power BI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CLIENTS ==================== -->
+  <section class="clients" id="clients">
+    <div class="container">
+      <div class="section-tag">Who I've Worked With</div>
+      <h2 class="section-title fade-up">Brands I've Driven<br>Results For</h2>
+      <p class="clients-intro fade-up">From DTC ecommerce to enterprise SaaS, hospitality to financial services. A sample of the brands I've led paid media strategy for at Intero Digital.</p>
+
+      <div class="clients-grid fade-up">
+        <div class="client-card">Tamron</div>
+        <div class="client-card">My Computer Career</div>
+        <div class="client-card">Vodaland</div>
+        <div class="client-card">Auberge Resorts</div>
+        <div class="client-card">Mizuno</div>
+        <div class="client-card">Hilton Properties</div>
+        <div class="client-card">Turtle Bay Resort</div>
+        <div class="client-card">Resideo / First Alert</div>
+        <div class="client-card">Honeywell Home</div>
+        <div class="client-card">Okuma Fishing</div>
+        <div class="client-card">Scosche Industries</div>
+        <div class="client-card">Iron Flask</div>
+        <div class="client-card">Wall Street Prep</div>
+        <div class="client-card">AvidXchange</div>
+        <div class="client-card">Soapy Joe's</div>
+        <div class="client-card">Integrity Mortgage</div>
+        <div class="client-card">Aegis Software</div>
+        <div class="client-card">Guild Mortgage</div>
+      </div>
+
+      <p class="clients-note fade-up">Over 1,000 brands served across ecommerce, SaaS, financial services, hospitality, home services, and more.</p>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-tag">Common Questions</div>
+      <h2 class="section-title fade-up">Before You Reach Out</h2>
+
+      <div class="faq-list fade-up">
+        <div class="faq-item">
+          <button class="faq-question">Do you have experience in SaaS?</button>
+          <div class="faq-answer">
+            <p>Yes. I've led paid media strategy for multiple SaaS and B2B technology companies including AvidXchange, Wall Street Prep, Aegis Software, and others. This includes full-funnel campaign architecture across Google, Meta, and LinkedIn, with a focus on pipeline generation, lead quality, and CAC efficiency. I understand the longer sales cycles, attribution complexity, and demo/trial conversion models that SaaS requires.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Are you hands-on or purely strategic?</button>
+          <div class="faq-answer">
+            <p>Both. I've built campaigns from scratch and I've led 40-person teams. At the leadership level, my focus is on strategy, systems, and team performance. But I still get into accounts regularly. I believe the best leaders know the platforms well enough to challenge their teams' work and spot issues before they become problems.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How do you approach inheriting an existing team and program?</button>
+          <div class="faq-answer">
+            <p>I start by listening. The first 30 days are about understanding what's working, where the gaps are, and what the team needs to perform at a higher level. I audit the account structures, measurement setup, and team workflows before making changes. I've done this through two acquisitions and a PE-backed consolidation, so I know how to bring stability and direction without disrupting momentum.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What's the difference between agency and in-house experience?</button>
+          <div class="faq-answer">
+            <p>The biggest difference is volume and accountability. In-house, you learn one business deeply. At an agency, you learn hundreds. You see what works across industries, you build systems that have to scale, and you prove ROI every month or the client leaves. That pressure builds a very different kind of operator. I bring that breadth of pattern recognition and operational discipline to every role.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What budget sizes have you managed?</button>
+          <div class="faq-answer">
+            <p>I currently oversee a $50M+ annual media portfolio across multiple clients and channels. Individually, I've managed accounts ranging from $50K/month to $2M+/month. The budget size matters less than the systems behind it. I've scaled programs 3x in under two years by building the right structure, measurement, and team around the spend.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-tag">Let's Connect</div>
+      <h2 class="section-title fade-up">Ready to Talk<br>Growth?</h2>
+      <p class="contact-intro fade-up">Whether you're hiring for a leadership role or need strategic consulting on paid acquisition, I'd like to hear from you.</p>
+      <div class="contact-links fade-up">
+        <a href="mailto:daesquivel31@gmail.com" class="contact-link">✉ Email Me</a>
+        <a href="https://linkedin.com/in/esquiveldaniel" target="_blank" class="contact-link">in LinkedIn</a>
+      </div>
+      <div class="contact-location fade-up">Based in San Diego, CA</div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <p>&copy; 2026 Daniel Esquivel. Built with intention.</p>
+    <p style="margin-top: 0.4rem; font-size: 0.72rem; color: #5A6178;">Built using AI-assisted development workflows.</p>
+  </footer>
+
+  <!-- ==================== SCROLL ANIMATIONS ==================== -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Close mobile nav on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
